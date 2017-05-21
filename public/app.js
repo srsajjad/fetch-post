@@ -1,22 +1,22 @@
-var ul = document.querySelector('ul');
+var ul = document.querySelector('ul')
 fetch('/showTasks')
 	.then(res => res.json())
-	.then(res => res.forEach(listingTasks));
+	.then(res => res.forEach(listingTasks))
 
 
-document.querySelector('button').addEventListener('click',handleData);
+document.querySelector('button').addEventListener('click',handleData)
 
 
-function handleData(){
-		var liArr = document.querySelectorAll('li') ;
+function handleData (){
+		var liArr = document.querySelectorAll('li')
 
 		liArr.forEach(function(x){
 			if(x){
-				x.outerHTML = '';
+				x.outerHTML = ''
 			}
-		});
+		})
 
-	var myTask = document.querySelector('input').value ;
+	var myTask = document.querySelector('input').value
 
 	console.log(myTask);
 
@@ -32,16 +32,16 @@ function handleData(){
 	  body: JSON.stringify({task : myTask})
 	  
 	}).then(res => res.json())
-	  .then(res => console.log(res));
+	  .then(res => console.log(res))
 
 	fetch('/showTasks')
 		.then(res => res.json())
-		.then(res => res.forEach(listingTasks));
+		.then(res => res.forEach(listingTasks))
 }
 
 
-function listingTasks(n){
-	var li = document.createElement('li');
-	li.innerHTML = n ;
-	ul.appendChild(li);
+function listingTasks (n){
+	var li = document.createElement('li')
+	li.innerHTML = n 
+	ul.appendChild(li)
 }
