@@ -10,7 +10,7 @@ var fs = require('fs')
 
 
 app.use(express.static('public'))
-var urlencodedParser = bodyParser.urlencoded({ extended: true })
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.get('/showTasks',function(req,res){
